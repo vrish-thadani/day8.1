@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us</title>
+  <style>
+    /* Reset default styles */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(135deg, #74ebd5 0%, #acb6e5 100%);
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+    }
+
+    .form-wrapper {
+      background-color: #ffffff;
+      padding: 40px;
+      border-radius: 20px;
+      max-width: 500px;
+      width: 100%;
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    h2 {
+      text-align: center;
+      margin-bottom: 25px;
+      color: #333;
+    }
+
+    form {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    label {
+      font-size: 15px;
+      font-weight: 600;
+      color: #555;
+    }
+
+    input[type="text"],
+    input[type="email"],
+    input[type="tel"],
+    select,
+    textarea {
+      padding: 12px 15px;
+      border-radius: 8px;
+      border: 1px solid #ccc;
+      background: #f9f9f9;
+      font-size: 14px;
+      transition: border-color 0.3s ease;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #74ebd5;
+      outline: none;
+      background: #fff;
+    }
+
+    fieldset {
+      border: none;
+      margin-top: 10px;
+      padding: 0;
+    }
+
+    legend {
+      font-size: 16px;
+      font-weight: bold;
+      margin-bottom: 10px;
+      color: #444;
+    }
+
+    .gender-options {
+      display: flex;
+      justify-content: space-between;
+      margin-top: 8px;
+    }
+
+    .gender-options label {
+      font-weight: normal;
+      font-size: 14px;
+    }
+
+    input[type="radio"] {
+      margin-right: 6px;
+      accent-color: #6a11cb;
+    }
+
+    .checkbox-container {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    textarea {
+      resize: vertical;
+      min-height: 100px;
+    }
+
+    button {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: #fff;
+      border: none;
+      padding: 14px;
+      font-size: 16px;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: background 0.3s ease;
+      margin-top: 15px;
+    }
+
+    button:hover {
+      background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-wrapper">
+    <h2>Get in Touch</h2>
+    <form action="/submit-form" method="POST">
+      
+      <label for="name">Full Name</label>
+      <input placeholder="e.g., Vrish Thadani" type="text" id="name" name="name" required>
+
+      <label for="email">Email Address</label>
+      <input placeholder="you@example.com" type="email" id="email" name="email" required>
+
+      <label for="phone">Phone Number</label>
+      <input placeholder="123-456-7890" type="tel" id="phone" name="phone" pattern="\d{3}[-]\d{3}[-]\d{4}" required>
+
+      <fieldset>
+        <legend>Gender</legend>
+        <div class="gender-options">
+          <label><input type="radio" name="gender" value="Male">Male</label>
+          <label><input type="radio" name="gender" value="Female">Female</label>
+          <label><input type="radio" name="gender" value="Other">Other</label>
+        </div>
+      </fieldset>
+
+      <label for="city">Select Your City</label>
+      <select id="city" name="city" required>
+        <option value="">--Please Choose--</option>
+        <option value="nyc">Mumbai</option>
+        <option value="la">Navi Mumbai</option>
+        <option value="sf">New York</option>
+      </select>
+
+      <div class="checkbox-container">
+        <input type="checkbox" id="subscribe" name="subscribe">
+        <label for="subscribe">Subscribe to Newsletter</label>
+      </div>
+
+      <label for="message">Your Message</label>
+      <textarea placeholder="Write your message here..." id="message" name="message" required></textarea>
+
+      <button type="submit">Submit Form</button>
+
+    </form>
+  </div>
+
+</body>
+</html>
